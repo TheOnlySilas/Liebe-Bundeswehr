@@ -1,0 +1,405 @@
+/* ═══════════════════════════════════════════════════
+   LIEBES TAGEBUCH 💕 — Stylesheet
+   Palette:
+     cream:    #FFF9F0
+     pink:     #FFD6E7
+     rose:     #FF85A2
+     raspberry:#E8527A
+     lavender: #E8C4F0
+     purple:   #C28FC5
+     text:     #5A3A4A
+   ═══════════════════════════════════════════════════ */
+
+/* ─── Reset & Base ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream:     #FFF9F0;
+  --pink:      #FFD6E7;
+  --rose:      #FF85A2;
+  --raspberry: #E8527A;
+  --lavender:  #E8C4F0;
+  --purple:    #C28FC5;
+  --text:      #5A3A4A;
+  --text-muted:#9B7088;
+  --shadow:    rgba(232, 82, 122, 0.18);
+  --line-gap:  32px;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Caveat', cursive;
+  color: var(--text);
+  background-color: var(--pink);
+  /* Subtle scattered hearts via SVG data URI */
+  background-image:
+    radial-gradient(circle at 20% 30%, #f9c8dd 0%, transparent 55%),
+    radial-gradient(circle at 80% 70%, var(--lavender) 0%, transparent 55%),
+    radial-gradient(circle at 50% 50%, #fff0f6 0%, transparent 70%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Utility */
+.hidden { display: none !important; }
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Navigation ─── */
+.site-nav {
+  background: linear-gradient(135deg, var(--rose) 0%, var(--raspberry) 100%);
+  padding: 0.85rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 3px 12px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.6rem;
+}
+
+.nav-links a {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.1rem;
+  color: #ffe8f0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  text-decoration: underline wavy 1.5px;
+}
+
+/* ─── Main Content ─── */
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem 4rem;
+  position: relative;
+}
+
+/* Floating decorative doodles */
+.doodle {
+  position: absolute;
+  font-size: 2.4rem;
+  user-select: none;
+  pointer-events: none;
+  animation: float 4s ease-in-out infinite;
+  opacity: 0.7;
+}
+.doodle-tl { top: 1.5rem;   left: 1.5rem;  animation-delay: 0s; }
+.doodle-tr { top: 1.5rem;   right: 1.5rem; animation-delay: 1s; }
+.doodle-bl { bottom: 1.5rem; left: 1.5rem; animation-delay: 2s; }
+.doodle-br { bottom: 1.5rem; right: 1.5rem; animation-delay: 3s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* ─── Diary Card ─── */
+.diary-card {
+  background: var(--cream);
+  width: 100%;
+  max-width: 660px;
+  border-radius: 4px 16px 16px 4px;
+  box-shadow:
+    0 8px 32px var(--shadow),
+    0 2px 8px rgba(0,0,0,0.06),
+    inset 0 0 0 1px rgba(255,133,162,0.15);
+  transform: rotate(-0.6deg);
+  overflow: hidden;
+  position: relative;
+
+  /* Left "spine" strip */
+  border-left: 6px solid var(--rose);
+
+  /* Ruled lines via background */
+  background-image:
+    /* Margin line (pink) */
+    linear-gradient(90deg, transparent 56px, #ff85a240 56px, #ff85a240 58px, transparent 58px),
+    /* Horizontal rules */
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent calc(var(--line-gap) - 1px),
+      #e8c4f055 calc(var(--line-gap) - 1px),
+      #e8c4f055 var(--line-gap)
+    );
+  background-size: 100% 100%, 100% var(--line-gap);
+  background-position: 0 0, 0 72px;
+}
+
+/* Pink binding holes along the left */
+.diary-card::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  top: 0; bottom: 0;
+  width: 20px;
+  background-image: radial-gradient(circle, #c28fc5 5px, transparent 5px);
+  background-size: 20px 50px;
+  background-repeat: repeat-y;
+}
+
+/* ─── Diary Header ─── */
+.diary-header {
+  padding: 1.8rem 2rem 0.5rem 2.8rem;
+  text-align: center;
+}
+
+.diary-date {
+  font-family: 'Caveat', cursive;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.diary-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--raspberry);
+  line-height: 1.2;
+  text-shadow: 1px 1px 0 #f9c8dd;
+}
+
+.diary-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+}
+
+/* ─── Textarea ─── */
+.diary-lines {
+  padding: 1rem 2rem 0 2.8rem;
+  position: relative;
+}
+
+.diary-textarea {
+  width: 100%;
+  min-height: 300px;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: vertical;
+  font-family: 'Caveat', cursive;
+  font-size: 1.25rem;
+  line-height: var(--line-gap);
+  color: var(--text);
+  padding: 0;
+  /* Align text to the ruled lines */
+  padding-top: 4px;
+  caret-color: var(--raspberry);
+}
+
+.diary-textarea::placeholder {
+  color: #d4b0c0;
+  font-style: italic;
+}
+
+.char-counter {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: right;
+  margin-top: 0.3rem;
+}
+
+/* ─── Location Block ─── */
+.location-block {
+  padding: 1.2rem 2rem 0.5rem 2.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.btn-geo {
+  align-self: flex-start;
+}
+
+.geo-status {
+  font-size: 0.95rem;
+  color: var(--purple);
+  min-height: 1.2em;
+}
+
+.select-label {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.diary-select {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: var(--text);
+  background: #fff;
+  border: 2px solid var(--lavender);
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.diary-select:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px #ff85a230;
+}
+
+.selected-info {
+  background: #fff0f7;
+  border: 1.5px dashed var(--rose);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+/* ─── Buttons ─── */
+.card-actions {
+  padding: 1.4rem 2rem 1.8rem 2.8rem;
+  display: flex;
+  gap: 0.9rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  padding: 0.55rem 1.7rem;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+  position: relative;
+  letter-spacing: 0.3px;
+}
+
+.btn:active { transform: scale(0.96) !important; }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--rose) 0%, var(--raspberry) 100%);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(232,82,122,0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) rotate(0.5deg);
+  box-shadow: 0 6px 20px rgba(232,82,122,0.5);
+}
+
+.btn-primary:disabled {
+  filter: grayscale(50%) opacity(0.6);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background: var(--lavender);
+  color: var(--purple);
+  box-shadow: 0 3px 10px rgba(194,143,197,0.25);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(194,143,197,0.35);
+}
+
+.btn-geo {
+  background: linear-gradient(135deg, #b8e0ff 0%, #a0c4ff 100%);
+  color: #3a5a80;
+  box-shadow: 0 3px 10px rgba(100,160,230,0.25);
+  font-family: 'Caveat', cursive;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.btn-geo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(100,160,230,0.35);
+}
+
+/* ─── Success Step ─── */
+.success-heart {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  animation: heartbeat 1.1s ease infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14%       { transform: scale(1.25); }
+  28%       { transform: scale(1); }
+  42%       { transform: scale(1.15); }
+  70%       { transform: scale(1); }
+}
+
+/* ─── Footer ─── */
+.site-footer {
+  background: var(--rose);
+  padding: 0.9rem 2rem;
+  text-align: center;
+  border-top: 3px dashed #f9c8dd;
+}
+
+.footer-note {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.footer-note a {
+  color: #ffe8f0;
+  text-decoration: underline dotted;
+}
+
+.footer-note a:hover {
+  color: #fff;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .diary-card { transform: rotate(0deg); border-radius: 8px; }
+  .diary-title { font-size: 1.8rem; }
+  .doodle { font-size: 1.6rem; }
+  .card-actions { justify-content: center; }
+}

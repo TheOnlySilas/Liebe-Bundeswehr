@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liebe Bundeswehr 💕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+  <nav class="site-nav">
+    <span class="nav-logo">💕 Mein Bundeswehr-Tagebuch 💕</span>
+    <ul class="nav-links">
+      <li><a href="#">Startseite</a></li>
+      <li><a href="#">Über mich</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════ MAIN ═══════════════════════════ -->
+  <main class="main-content">
+
+    <!-- Decorative doodles -->
+    <span class="doodle doodle-tl">🌸</span>
+    <span class="doodle doodle-tr">⭐</span>
+    <span class="doodle doodle-bl">🦋</span>
+    <span class="doodle doodle-br">🌷</span>
+
+    <!-- ───── STEP 1: Diary Entry ───── -->
+    <section id="step-entry" class="diary-card">
+      <div class="diary-header">
+        <span class="diary-date" id="diary-date"></span>
+        <h1 class="diary-title">Liebe Bundeswehr...&nbsp;💌</h1>
+        <p class="diary-subtitle">Schreib der Bundeswehr, was du heute gemacht hast&nbsp;✨</p>
+      </div>
+
+      <div class="diary-lines">
+        <label for="diary-text" class="sr-only">Dein Tagebucheintrag</label>
+        <textarea
+          id="diary-text"
+          class="diary-textarea"
+          rows="12"
+          placeholder="Erzähle der Bundeswehr, wo du heute warst und was du gemacht hast, sie interessieren sich SEHR dafür...."
+          maxlength="3000"
+        ></textarea>
+        <div class="char-counter"><span id="char-count">0</span> / 3000</div>
+      </div>
+
+      <div class="card-actions">
+        <button class="btn btn-primary" id="btn-next">
+          Weiter&nbsp;💌
+        </button>
+      </div>
+    </section>
+
+    <!-- ───── STEP 2: Location Picker ───── -->
+    <section id="step-location" class="diary-card hidden">
+      <div class="diary-header">
+        <h2 class="diary-title">An welches Karrierecenter?&nbsp;📍</h2>
+        <p class="diary-subtitle">Wähle das nächste Bundeswehr-Karrierecenter in deiner Nähe&nbsp;🗺️</p>
+      </div>
+
+      <div class="location-block">
+        <button class="btn btn-geo" id="btn-geo">
+          📍 Nächstes automatisch finden
+        </button>
+        <p class="geo-status" id="geo-status"></p>
+
+        <label for="center-select" class="select-label">Oder selbst wählen:</label>
+        <select id="center-select" class="diary-select">
+          <option value="" disabled selected>— Karrierecenter wählen —</option>
+        </select>
+
+        <div class="selected-info hidden" id="selected-info">
+          <p>📬 E-Mail-Adresse: <strong id="selected-email"></strong></p>
+        </div>
+      </div>
+
+      <div class="card-actions">
+        <button class="btn btn-secondary" id="btn-back">
+          ← Zurück
+        </button>
+        <button class="btn btn-primary" id="btn-send" disabled>
+          Absenden&nbsp;💌
+        </button>
+      </div>
+    </section>
+
+    <!-- ───── STEP 3: Confirmation ───── -->
+    <section id="step-done" class="diary-card hidden">
+      <div class="diary-header">
+        <div class="success-heart">💖</div>
+        <h2 class="diary-title">E-Mail wird geöffnet!</h2>
+        <p class="diary-subtitle">
+          Dein E-Mail-Programm sollte sich gleich öffnen.<br />
+          Klicke dort auf <em>Senden</em> um deinen Eintrag abzuschicken&nbsp;✉️
+        </p>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-secondary" id="btn-restart">
+          🌸 Neuen Eintrag schreiben
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="site-footer">
+    <p class="footer-note">
+      made with 💕 · kein offizielles Bundeswehr-Produkt · <a href="#">Impressum</a> · <a href="#">Datenschutz</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
