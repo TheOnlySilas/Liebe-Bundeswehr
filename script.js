@@ -12,16 +12,13 @@
 // ─── Karrierecenter data ─────────────────────────────────────────
 // Replace placeholder emails with real addresses before going live.
 const KARRIERECENTER = [
-  { name: 'Berlin',      email: 'karrierecenter.berlin@bundeswehr.org',      lat: 52.5200, lng: 13.4050 },
-  { name: 'Hamburg',     email: 'karrierecenter.hamburg@bundeswehr.org',     lat: 53.5511, lng:  9.9937 },
-  { name: 'München',     email: 'karrierecenter.muenchen@bundeswehr.org',    lat: 48.1351, lng: 11.5820 },
-  { name: 'Köln',        email: 'karrierecenter.koeln@bundeswehr.org',       lat: 50.9333, lng:  6.9500 },
-  { name: 'Frankfurt',   email: 'karrierecenter.frankfurt@bundeswehr.org',   lat: 50.1109, lng:  8.6821 },
-  { name: 'Stuttgart',   email: 'karrierecenter.stuttgart@bundeswehr.org',   lat: 48.7758, lng:  9.1829 },
-  { name: 'Düsseldorf',  email: 'karrierecenter.duesseldorf@bundeswehr.org', lat: 51.2217, lng:  6.7762 },
-  { name: 'Leipzig',     email: 'karrierecenter.leipzig@bundeswehr.org',     lat: 51.3397, lng: 12.3731 },
-  { name: 'Hannover',    email: 'karrierecenter.hannover@bundeswehr.org',    lat: 52.3759, lng:  9.7320 },
-  { name: 'Nürnberg',    email: 'karrierecenter.nuernberg@bundeswehr.org',   lat: 49.4521, lng: 11.0767 },
+  { name: 'Berlin',      email: 'bewerbungenberlin@bundeswehr.org',      lat: 52.5200, lng: 13.4050 },
+  { name: 'Düsseldorf',  email: 'bewerbungenduesseldorf@bundeswehr.org', lat: 51.2254, lng:  6.7763 },
+  { name: 'Erfurt',      email: 'KarrCBwErfurtEingang@bundeswehr.org', lat: 50.9778, lng:  11.0287 },
+  { name: 'Hannover',    email: 'KarrCBwHannoverBewerberservice@bundeswehr.org', lat: 52.3759, lng:  9.7320 },
+  { name: 'München',     email: 'bewerbungsservicemuenchen@bundeswehr.org',    lat: 48.1351, lng: 11.5820 },
+  { name: 'Stuttgart',   email: 'KarrCBwStuttgartEingang@bundeswehr.org',   lat: 48.7758, lng:  9.1829 },
+  { name: 'Wilhelmhaven',email: ' KarrCBwWilhelmshavenBewMgmt@Bundeswehr.org',     lat: 53.5279, lng: 8.106 },
 ];
 
 // ─── DOM references ──────────────────────────────────────────────
